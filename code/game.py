@@ -2,29 +2,18 @@
 import pygame as pg
 
 from code.menu import Menu
+from code.const import WIN_WIDTH, WIN_HEIGHT
 
 class Game:
     def __init__(self):
         # Iniciando o pygame
         pg.init()
         # Abrindo uma janela
-        self.window = pg.display.set_mode(size = (600, 480))
+        self.window = pg.display.set_mode(size = (WIN_WIDTH, WIN_HEIGHT))
 
 
-    def run(self, ):
+    def run(self):
         while True:
-            menu = menu(self.window)
-            menu.run(self, )
+            menu = Menu(self.window)
+            menu.run()
             pass
-
-
-
-        '''
-        # Mantendo a janela aberta
-        while True:
-            # iniciando os eventos
-            for event in pg.event.get():
-                if event.type == pg.QUIT:
-                    pg.quit() # Fechar a janela
-                    quit() # Finalizando a pygame
-        '''
